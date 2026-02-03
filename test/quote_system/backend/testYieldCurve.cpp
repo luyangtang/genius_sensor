@@ -1,6 +1,7 @@
+#include "testHeaders.h"
 #include "quote_system/backend/YieldCurve.h"
 
-int main() {
+void testYieldCurve() {
     YieldCurve yc;
     yc.addRate(0.05, 1.0);  // 5% at 1 year
     yc.addRate(0.06, 2.0);  // 6% at 2 years
@@ -11,9 +12,8 @@ int main() {
     double rate3 = yc.getRate(3.0); // Should return 7%
 
     // compare with expected values
-    if (std::abs(rate1 - 0.055) > 1e-6) return 1;
-    if (std::abs(rate2 - 0.065) > 1e-6) return 1;
-    if (std::abs(rate3 - 0.07) > 1e-6) return 1;
-
-    return 0;
+    if (std::abs(rate1 - 0.055) > 1e-6) throw 1;
+    if (std::abs(rate2 - 0.065) > 1e-6) throw 1;
+    if (std::abs(rate3 - 0.07) > 1e-6) throw 1;
+    return;
 }

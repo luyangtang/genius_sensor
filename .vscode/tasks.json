@@ -2,17 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build test_yield_curve",
+            "label": "build tests",
             "type": "shell",
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
                 "-I${workspaceFolder}/include",
-                "-I${workspaceFolder}/src", // Added src to include path
-                "${workspaceFolder}/test/quote_system/backend/test_yield_curve.cpp",
-                "${workspaceFolder}/src/quote_system/backend/YieldCurve.cpp",
+                "-I${workspaceFolder}/test/include",
+                "${workspaceFolder}/test/*.cpp",
+                "${workspaceFolder}/test/quote_system/*/*.cpp",
+                "${workspaceFolder}/src/quote_system/*/*.cpp",
                 "-o",
-                "${workspaceFolder}/build/test_yield_curve"
+                "${workspaceFolder}/build/tests"
             ],
             "group": {
                 "kind": "build",
