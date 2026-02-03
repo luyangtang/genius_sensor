@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug test_yield_curve",
+      "name": "Debug tests",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/test_yield_curve",
+      "program": "${workspaceFolder}/build/tests",
       "args": [
         "-I${workspaceFolder}/include",
       ],
@@ -14,7 +14,7 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb",
-      "preLaunchTask": "build test_yield_curve"
+      "preLaunchTask": "build tests"
     }
   ]
 }
